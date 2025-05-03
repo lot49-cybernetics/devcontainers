@@ -31,7 +31,8 @@ jobs:
               uses: devcontainers/ci@v0.3
               with:
                   subFolder: images/lot49-base
-                  imageName: ghcr.io/lot49-dev/lot49-base:noble
-                  cacheFrom: ghcr.io/lot49-dev/lot49-base:noble
+                  imageName: ghcr.io/lot49-dev/lot49-base
+                  imageTag: noble
+                  cacheFrom: ghcr.io/lot49-dev/lot49-base
                   platform: linux/amd64,linux/arm64
                   push: always
