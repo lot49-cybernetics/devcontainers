@@ -1,0 +1,20 @@
+{
+    "name": "websocat",
+    "id": "websocat",
+    "version": "1.0.0",
+    "description": "A feature to pre-install websocat from a GitHub release",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "v1.13.0"
+            ],
+            "default": "v1.13.0",
+            "description": "Set the version of websocat to download and install."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

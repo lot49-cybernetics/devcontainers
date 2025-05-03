@@ -1,20 +1,9 @@
 {
-    "name": "diabolica",
-    "image": "mcr.microsoft.com/devcontainers/base:noble",
+    "name": "lot49-base-cpp",
+    "image": "ghcr.io/lot49-dev/lot49-base-deploy:noble",
     "features": {
-        "ghcr.io/devcontainers/features/aws-cli:1": {},
-        "ghcr.io/devcontainers/features/common-utils:2": {},
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-        "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
-            "minikube": "none"
-        },
-        "ghcr.io/devcontainers-community/npm-features/typescript:1": {
-            "version": "latest"
-        },
         "ghcr.io/devcontainers-contrib/features/apt-packages": {
             "packages": [
-                "ansible",
                 "autoconf",
                 "autoconf-archive",
                 "automake",
@@ -30,7 +19,6 @@
                 "cmake",
                 "crossbuild-essential-amd64",
                 "doxygen",
-                "flawfinder",
                 "flex",
                 "gcovr",
                 "gdb",
@@ -42,7 +30,6 @@
                 "libc++abi-dev",
                 "libclang-dev",
                 "libclang-rt-dev",
-                "libclang-rt-dev-wasm64",
                 "liblapack-dev",
                 "libtool",
                 "lld",
@@ -55,100 +42,8 @@
                 "zstd"
             ]
         },
-        "ghcr.io/devcontainers-contrib/features/devcontainers-cli:1": {},
-        "ghcr.io/devcontainers-contrib/features/grype:1": {},
-        "ghcr.io/devcontainers-contrib/features/markdownlint-cli2:1": {},
-        "ghcr.io/devcontainers-contrib/features/mypy:2": {},
-        "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
-            "package": "lizard"
-        },
-        "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
-        "ghcr.io/devcontainers-contrib/features/ruff:1": {},
-        "ghcr.io/devcontainers-contrib/features/syft:1": {},
-        "ghcr.io/hspaans/devcontainer-features/pytest:1": {},
-        "ghcr.io/msclock/features/vcpkg:1": {
-            "vcpkgversion": "stable"
-        },
-        "ghcr.io/prulloac/devcontainer-features/latex:1": {},
-        "ghcr.io/rio/features/k9s:1": {},
-        "ghcr.io/robbert229/devcontainer-features/opentofu:1": {
-            "version": "1.9.1"
-        },
-        "ghcr.io/devcontainers-extra/features/terragrunt:1": {},
-        "ghcr.io/va-h/devcontainers-features/uv:1": {},
         "./mold": {
             "version": "2.38.1"
-        },
-        "./websocat": {
-            "version": "v1.14.0"
-        }
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "adpyke.codesnap",
-                "akamud.vscode-theme-onedark",
-                "amazonwebservices.aws-toolkit-vscode",
-                "asyncapi.asyncapi-preview",
-                "bytecodealliance.wit-idl",
-                "charliermarsh.ruff",
-                "christian-kohler.path-intellisense",
-                "davidanson.vscode-markdownlint",
-                "donjayamanne.githistory",
-                "donjayamanne.python-environment-manager",
-                "dtsvet.vscode-wasm",
-                "eamodio.gitlens",
-                "ecmel.vscode-html-css",
-                "esbenp.prettier-vscode",
-                "evidence.sqltools-duckdb-driver",
-                "formulahendry.code-runner",
-                "foxundermoon.shell-format",
-                "github.copilot",
-                "github.remotehub",
-                "github.vscode-github-actions",
-                "github.vscode-pull-request-github",
-                "hediet.vscode-drawio",
-                "ionutvmi.path-autocomplete",
-                "llvm-vs-code-extensions.vscode-clangd",
-                "mads-hartmann.bash-ide-vscode",
-                "matepek.vscode-catch2-test-adapter",
-                "mattiasbaake.vscode-snippets-for-ansible",
-                "ms-azuretools.vscode-docker",
-                "ms-kubernetes-tools.vscode-kubernetes-tools",
-                "ms-python.mypy-type-checker",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-toolsai.jupyter",
-                "ms-toolsai.jupyter-keymap",
-                "ms-toolsai.jupyter-renderers",
-                "ms-vscode.cmake-tools",
-                "mtxr.sqltools",
-                "mtxr.sqltools-driver-pg",
-                "narasimapandiyan.jetbrainsmono",
-                "njpwerner.autodocstring",
-                "norgor.capnp",
-                "pjmiravalle.terraform-advanced-syntax-highlighting",
-                "pmneo.tsimporter",
-                "rangav.vscode-thunder-client",
-                "robotpajamas.vscode-suspenders",
-                "saoudrizwan.claude-dev",
-                "shd101wyy.markdown-preview-enhanced",
-                "stringham.move-ts",
-                "stuart.unique-window-colors",
-                "styled-components.vscode-styled-components",
-                "tamasfe.even-better-toml",
-                "vitest.explorer",
-                "vscode-icons-team.vscode-icons",
-                "waderyan.gitblame",
-                "xelad0m.jupyter-toc"
-            ]
-        }
-    },
-    "onCreateCommand": "${containerWorkspaceFolder}/.devcontainer/pre-install.sh",
-    "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/post-install.sh",
-    "portsAttributes": {
-        "80": {
-            "label": "443"
         }
     }
 }
