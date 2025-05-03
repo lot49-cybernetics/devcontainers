@@ -1,0 +1,23 @@
+{
+    "name": "lot49-devcontainers",
+    "image": "mcr.microsoft.com/devcontainers/base:noble",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers-contrib/features/devcontainers-cli:1": {},
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "akamud.vscode-theme-onedark",
+                "github.vscode-github-actions",
+                "github.vscode-pull-request-github",
+                "narasimapandiyan.jetbrainsmono",
+                "stuart.unique-window-colors",
+                "styled-components.vscode-styled-components",
+                "vscode-icons-team.vscode-icons",
+                "waderyan.gitblame"
+            ]
+        }
+    }
+}
