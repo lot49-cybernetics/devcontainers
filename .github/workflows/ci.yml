@@ -35,7 +35,8 @@ jobs:
                   imageName: ghcr.io/lot49-cybernetics/lot49-base
                   imageTag: noble
                   cacheFrom: ghcr.io/lot49-cybernetics/lot49-base
-                  platform: linux/amd64,linux/arm64
+                  # platform: linux/amd64,linux/arm64
+                  runCmd: sleep 1
                   push: always
             - name: Pre-build lot49-base-deploy
               uses: devcontainers/ci@v0.3
@@ -44,7 +45,8 @@ jobs:
                   imageName: ghcr.io/lot49-cybernetics/lot49-base-deploy
                   imageTag: noble
                   cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-deploy
-                  platform: linux/amd64,linux/arm64
+                  # platform: linux/amd64,linux/arm64
+                  runCmd: sleep 1
                   push: always
             - name: Pre-build lot49-base-cpp
               uses: devcontainers/ci@v0.3
@@ -53,7 +55,8 @@ jobs:
                   imageName: ghcr.io/lot49-cybernetics/lot49-base-cpp
                   imageTag: noble
                   cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-cpp
-                  platform: linux/amd64,linux/arm64
+                  # platform: linux/amd64,linux/arm64
+                  runCmd: sleep 1
                   push: always
             - name: Pre-build lot49-base-polyglot
               uses: devcontainers/ci@v0.3
@@ -62,6 +65,7 @@ jobs:
                   imageName: ghcr.io/lot49-cybernetics/lot49-base-polyglot
                   imageTag: noble
                   cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-polyglot
-                  platform: linux/amd64,linux/arm64
+                  # platform: linux/amd64,linux/arm64
+                  runCmd: sleep 1
                   push: always
             
