@@ -24,7 +24,8 @@ jobs:
                   platforms: linux/amd64,linux/arm64
                   install: true
                   use: true
-            - uses: actions/setup-node@v4
+            - name: Set up Node
+              uses: actions/setup-node@v4
               with:
                 node-version: 22
             - name: Install Devcontainer CLI
