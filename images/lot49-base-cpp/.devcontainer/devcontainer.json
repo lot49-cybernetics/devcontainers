@@ -1,6 +1,6 @@
 {
     "name": "lot49-base-cpp",
-    "image": "ghcr.io/lot49-dev/lot49-base-deploy:noble",
+    "image": "ghcr.io/lot49-cybernetics/lot49-base-deploy:noble",
     "features": {
         "ghcr.io/devcontainers-contrib/features/apt-packages": {
             "packages": [

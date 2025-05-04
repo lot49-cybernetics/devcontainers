@@ -1,6 +1,6 @@
 {
     "name": "lot49-base-polyglot",
-    "image": "ghcr.io/lot49-dev/lot49-base-cpp:noble",
+    "image": "ghcr.io/lot49-cybernetics/lot49-base-cpp:noble",
     "features": {
         "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.16": {
             "version": "25"
