@@ -15,7 +15,7 @@ jobs:
         permissions: write-all
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
             - name: Set up QEMU
               uses: docker/setup-qemu-action@v3
             - name: Setup Docker buildx for multi-architecture builds
@@ -33,8 +33,7 @@ jobs:
               with:
                   subFolder: images/lot49-base
                   imageName: ghcr.io/lot49-cybernetics/lot49-base
-                  imageTag: noble
-                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base
+                  cacheTo: type=registry,ref=lot49-cybernetics/lot49-base:cache
                   # platform: linux/amd64,linux/arm64
                   runCmd: sleep 1
                   push: always
