@@ -24,28 +24,27 @@ jobs:
                   platforms: linux/amd64,linux/arm64
                   install: true
                   use: true
+            - uses: actions/setup-node@v4
+              with:
+                node-version: 18
+            - name: Install Devcontainer CLI
+              run: npm install -g @devcontainer/cli
             - name: Login to GitHub Container Registry
               uses: docker/login-action@v2 
               with:
                 registry: ghcr.io
                 username: ${{ github.repository_owner }}
                 password: ${{ secrets.GITHUB_TOKEN }}
-            - name: Pre-build lot49-base
-              uses: devcontainers/ci@v0.3
-              with:
-                  subFolder: images/lot49-base
-                  imageName: ghcr.io/lot49-cybernetics/lot49-base
-                  cacheTo: type=registry,ref=ghcr.io/lot49-cybernetics/lot49-base:noble
-                  # platform: linux/amd64,linux/arm64
-                  push: always
-            - name: Pre-build lot49-base-deploy
-              uses: devcontainers/ci@v0.3
-              with:
-                  subFolder: images/lot49-base-deploy
-                  imageName: ghcr.io/lot49-cybernetics/lot49-base-deploy
-                  cacheTo: type=registry,ref=ghcr.io/lot49-cybernetics/lot49-base-deploy:noble
-                  # platform: linux/amd64,linux/arm64
-                  push: always
+            - name: Pre-build and publish lot49-base
+              run: devcontainer build --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble --label org.opencontainers.image.description="base features like pre-commit and various common linting and security tools" --push
+            # - name: Pre-build lot49-base-deploy
+            #   uses: devcontainers/ci@v0.3
+            #   with:
+            #       subFolder: images/lot49-base-deploy
+            #       imageName: ghcr.io/lot49-cybernetics/lot49-base-deploy
+            #       cacheTo: type=registry,ref=ghcr.io/lot49-cybernetics/lot49-base-deploy:noble
+            #       # platform: linux/amd64,linux/arm64
+            #       push: always
             # - name: Pre-build lot49-base-cpp
             #   uses: devcontainers/ci@v0.3
             #   with:
