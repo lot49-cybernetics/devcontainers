@@ -35,39 +35,38 @@ jobs:
               uses: devcontainers/ci@v0.3
               with:
                   subFolder: images/lot49-base
-                  imageName: ghcr.io/lot49-cybernetics/lot49-base
-                  cacheTo: type=registry,ref=ghcr.io/lot49-cybernetics/lot49-base:cache
+                  imageName: ghcr.io/lot49-cybernetics/devcontainers
                   # platform: linux/amd64,linux/arm64
                   runCmd: sleep 1
                   push: always
-            - name: Pre-build lot49-base-deploy
-              uses: devcontainers/ci@v0.3
-              with:
-                  subFolder: images/lot49-base-deploy
-                  imageName: ghcr.io/lot49-cybernetics/lot49-base-deploy
-                  imageTag: noble
-                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-deploy
-                  # platform: linux/amd64,linux/arm64
-                  runCmd: sleep 1
-                  push: always
-            - name: Pre-build lot49-base-cpp
-              uses: devcontainers/ci@v0.3
-              with:
-                  subFolder: images/lot49-base-cpp
-                  imageName: ghcr.io/lot49-cybernetics/lot49-base-cpp
-                  imageTag: noble
-                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-cpp
-                  # platform: linux/amd64,linux/arm64
-                  runCmd: sleep 1
-                  push: always
-            - name: Pre-build lot49-base-polyglot
-              uses: devcontainers/ci@v0.3
-              with:
-                  subFolder: images/lot49-base-cpp
-                  imageName: ghcr.io/lot49-cybernetics/lot49-base-polyglot
-                  imageTag: noble
-                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-polyglot
-                  # platform: linux/amd64,linux/arm64
-                  runCmd: sleep 1
-                  push: always
+            # - name: Pre-build lot49-base-deploy
+            #   uses: devcontainers/ci@v0.3
+            #   with:
+            #       subFolder: images/lot49-base-deploy
+            #       imageName: ghcr.io/lot49-cybernetics/lot49-base-deploy
+            #       imageTag: noble
+            #       cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-deploy
+            #       # platform: linux/amd64,linux/arm64
+            #       runCmd: sleep 1
+            #       push: always
+            # - name: Pre-build lot49-base-cpp
+            #   uses: devcontainers/ci@v0.3
+            #   with:
+            #       subFolder: images/lot49-base-cpp
+            #       imageName: ghcr.io/lot49-cybernetics/lot49-base-cpp
+            #       imageTag: noble
+            #       cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-cpp
+            #       # platform: linux/amd64,linux/arm64
+            #       runCmd: sleep 1
+            #       push: always
+            # - name: Pre-build lot49-base-polyglot
+            #   uses: devcontainers/ci@v0.3
+            #   with:
+            #       subFolder: images/lot49-base-cpp
+            #       imageName: ghcr.io/lot49-cybernetics/lot49-base-polyglot
+            #       imageTag: noble
+            #       cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-polyglot
+            #       # platform: linux/amd64,linux/arm64
+            #       runCmd: sleep 1
+            #       push: always
             
