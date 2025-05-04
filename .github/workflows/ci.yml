@@ -10,8 +10,9 @@ on:
 permissions: read-all
 
 jobs:
-    pre-build-base:
+    pre-build-all:
         runs-on: ubuntu-latest
+        permissions: write-all
         steps:
             - name: Checkout
               uses: actions/checkout@v3
@@ -27,12 +28,40 @@ jobs:
                 registry: ghcr.io
                 username: ${{ github.repository_owner }}
                 password: ${{ secrets.GITHUB_TOKEN }}
-            - name: Pre-build image
+            - name: Pre-build lot49-base
               uses: devcontainers/ci@v0.3
               with:
                   subFolder: images/lot49-base
-                  imageName: ghcr.io/lot49-dev/lot49-base
+                  imageName: ghcr.io/lot49-cybernetics/lot49-base
                   imageTag: noble
-                  cacheFrom: ghcr.io/lot49-dev/lot49-base
+                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base
                   platform: linux/amd64,linux/arm64
                   push: always
+            - name: Pre-build lot49-base-deploy
+              uses: devcontainers/ci@v0.3
+              with:
+                  subFolder: images/lot49-base-deploy
+                  imageName: ghcr.io/lot49-cybernetics/lot49-base-deploy
+                  imageTag: noble
+                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-deploy
+                  platform: linux/amd64,linux/arm64
+                  push: always
+            - name: Pre-build lot49-base-cpp
+              uses: devcontainers/ci@v0.3
+              with:
+                  subFolder: images/lot49-base-cpp
+                  imageName: ghcr.io/lot49-cybernetics/lot49-base-cpp
+                  imageTag: noble
+                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-cpp
+                  platform: linux/amd64,linux/arm64
+                  push: always
+            - name: Pre-build lot49-base-polyglot
+              uses: devcontainers/ci@v0.3
+              with:
+                  subFolder: images/lot49-base-cpp
+                  imageName: ghcr.io/lot49-cybernetics/lot49-base-polyglot
+                  imageTag: noble
+                  cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-polyglot
+                  platform: linux/amd64,linux/arm64
+                  push: always
+            
