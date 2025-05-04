@@ -36,38 +36,11 @@ jobs:
                 username: ${{ github.repository_owner }}
                 password: ${{ secrets.GITHUB_TOKEN }}
             - name: Pre-build and publish lot49-base
-              run: devcontainer build --platform linux/amd64 --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble --label org.opencontainers.image.description="Base features like pre-commit and various common linting and security tools" --push
+              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble --push
             - name: Pre-build and publish lot49-base-deploy
-              run: devcontainer build --platform linux/amd64 --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble --label org.opencontainers.image.description="Additional features for CI/CD and Kubernetes support, for deployable projects" --push
+              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble --push
             - name: Pre-build and publish lot49-base-cpp
-              run: devcontainer build --platform linux/amd64 --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble --label org.opencontainers.image.description="Additional features specifically for C/C++ projects" --push
+              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble --push
             - name: Pre-build and publish lot49-base-polyglot
-              run: devcontainer build --platform linux/amd64 --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble --label org.opencontainers.image.description="Expanded to support C/C++, Go, Python, TypeScript, Rust and Zig, plus Bazel, LaTeX documentation, WASM tooling and Protobuf support" --push
-
-            # - name: Pre-build lot49-base-deploy
-            #   uses: devcontainers/ci@v0.3
-            #   with:
-            #       subFolder: images/lot49-base-deploy
-            #       imageName: ghcr.io/lot49-cybernetics/lot49-base-deploy
-            #       cacheTo: type=registry,ref=ghcr.io/lot49-cybernetics/lot49-base-deploy:noble
-            #       # platform: linux/amd64,linux/arm64
-            #       push: always
-            # - name: Pre-build lot49-base-cpp
-            #   uses: devcontainers/ci@v0.3
-            #   with:
-            #       subFolder: images/lot49-base-cpp
-            #       imageName: ghcr.io/lot49-cybernetics/lot49-base-cpp
-            #       imageTag: noble
-            #       cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-cpp
-            #       platform: linux/amd64,linux/arm64
-            #       push: always
-            # - name: Pre-build lot49-base-polyglot
-            #   uses: devcontainers/ci@v0.3
-            #   with:
-            #       subFolder: images/lot49-base-cpp
-            #       imageName: ghcr.io/lot49-cybernetics/lot49-base-polyglot
-            #       imageTag: noble
-            #       cacheFrom: ghcr.io/lot49-cybernetics/lot49-base-polyglot
-            #       platform: linux/amd64,linux/arm64
-            #       push: always
+              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble --push
             
