@@ -37,11 +37,11 @@ jobs:
                 username: ${{ github.repository_owner }}
                 password: ${{ secrets.GITHUB_TOKEN }}
             - name: Pre-build and publish lot49-base
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble --push
             - name: Pre-build and publish lot49-base-deploy
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble --push
             - name: Pre-build and publish lot49-base-cpp
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble --push
             - name: Pre-build and publish lot49-base-polyglot
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble --push
             
