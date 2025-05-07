@@ -11,11 +11,11 @@ permissions: read-all
 
 jobs:
     pre-build-all:
-        # workaround for https://bugs.launchpad.net/ubuntu/+source/curl/+bug/2073448
-        runs-on: ubuntu-22.04
         strategy:
           matrix:
             runner: [ubuntu-latest, ubuntu-24.04-arm]
+            node: [22]
+        runs-on: ${{ matrix.runner }}
         permissions: write-all
         steps:
             - name: Checkout
@@ -23,7 +23,7 @@ jobs:
             - name: Set up Node
               uses: actions/setup-node@v4
               with:
-                node-version: 22
+                node-version: ${{ matrix.node }}
             - name: Install Devcontainer CLI
               run: npm install -g @devcontainers/cli
             - name: Login to GitHub Container Registry
