@@ -13,18 +13,13 @@ jobs:
     pre-build-all:
         # workaround for https://bugs.launchpad.net/ubuntu/+source/curl/+bug/2073448
         runs-on: ubuntu-22.04
+        strategy:
+          matrix:
+            runner: [ubuntu-latest, ubuntu-24.04-arm]
         permissions: write-all
         steps:
             - name: Checkout
               uses: actions/checkout@v3
-            - name: Set up QEMU
-              uses: docker/setup-qemu-action@v3
-            - name: Setup Docker buildx for multi-architecture builds
-              uses: docker/setup-buildx-action@v3
-              with:
-                  platforms: linux/amd64,linux/arm64
-                  install: true
-                  use: true
             - name: Set up Node
               uses: actions/setup-node@v4
               with:
@@ -38,11 +33,11 @@ jobs:
                 username: ${{ github.repository_owner }}
                 password: ${{ secrets.GITHUB_TOKEN }}
             - name: Pre-build and publish lot49-base
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble --push
             - name: Pre-build and publish lot49-base-deploy
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble --push
             - name: Pre-build and publish lot49-base-cpp
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble --push
             - name: Pre-build and publish lot49-base-polyglot
-              run: devcontainer build --platform linux/amd64,linux/arm64 --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble --push
+              run: devcontainer build --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble --push
             
