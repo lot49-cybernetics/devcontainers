@@ -16,6 +16,6 @@
     },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils",
-        "ghcr.io/devcontainers-contrib/features/apt-packages"
+        "ghcr.io/devcontainers-extra/features/apt-packages"
     ]
 }
