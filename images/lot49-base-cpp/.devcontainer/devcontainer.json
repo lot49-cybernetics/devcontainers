@@ -2,7 +2,7 @@
     "name": "lot49-base-cpp",
     "image": "ghcr.io/lot49-cybernetics/lot49-base-deploy:noble",
     "features": {
-        "ghcr.io/devcontainers-contrib/features/apt-packages": {
+        "ghcr.io/devcontainers-extra/features/apt-packages": {
             "packages": [
                 "autoconf",
                 "autoconf-archive",
