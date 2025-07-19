@@ -2,6 +2,7 @@
     "name": "lot49-base",
     "image": "mcr.microsoft.com/devcontainers/base:noble",
     "features": {
+        "ghcr.io/balazs23/devcontainers-features/bazel:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/devcontainers/features/github-cli:1": {},
         "ghcr.io/devcontainers-extra/features/apt-packages": {
@@ -17,6 +18,9 @@
         },
         "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
         "ghcr.io/devcontainers-extra/features/syft:1": {},
+        "./buildifier": {
+            "version": "8.2.1"
+        },
         "./websocat": {
             "version": "v1.14.0"
         }

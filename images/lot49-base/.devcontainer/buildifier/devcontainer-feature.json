@@ -1,0 +1,20 @@
+{
+    "name": "Buildifier",
+    "id": "buildifier",
+    "version": "1.0.0",
+    "description": "A feature to pre-install the buildifier formatter",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "8.2.1"
+            ],
+            "default": "8.2.1",
+            "description": "Set the version of buildifier to download and install."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers-extra/features/apt-packages"
+    ]
+}

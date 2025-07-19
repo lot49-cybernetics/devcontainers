@@ -8,7 +8,6 @@
         "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.16": {
             "version": "25"
         },
-        "ghcr.io/balazs23/devcontainers-features/bazel:1": {},
         "ghcr.io/devcontainers/features/go:1": {},
         "ghcr.io/devcontainers-community/npm-features/typescript:1": {
             "version": "latest"
