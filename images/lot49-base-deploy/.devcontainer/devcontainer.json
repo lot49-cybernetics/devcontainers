@@ -2,7 +2,6 @@
     "name": "lot49-base-deploy",
     "image": "ghcr.io/lot49-cybernetics/lot49-base:noble",
     "features": {
-        "ghcr.io/devcontainers/features/aws-cli:1": {},
         "ghcr.io/devcontainers/features/docker-in-docker": {},
         "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
         "ghcr.io/rio/features/k9s:1": {},

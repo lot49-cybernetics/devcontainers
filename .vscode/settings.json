@@ -1,4 +1,13 @@
 {
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "evenBetterToml.schema.catalogs": [
+        "https://www.schemastore.org/api/json/catalog.json"
+    ],
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.colorCustomizations": {
         "activityBar.background": "#023525",
         "titleBar.activeBackground": "#034A33",
