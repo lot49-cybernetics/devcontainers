@@ -1,0 +1,9 @@
+{
+    "name": "lot49-base-java",
+    "image": "ghcr.io/lot49-cybernetics/lot49-base-deploy:noble",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "24"
+        }
+    }
+}

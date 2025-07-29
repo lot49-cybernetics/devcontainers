@@ -38,6 +38,8 @@ jobs:
               run: devcontainer build --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble --push
             - name: Pre-build and publish lot49-base-cpp
               run: devcontainer build --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble --push
+            - name: Pre-build and publish lot49-base-java
+              run: devcontainer build --workspace-folder images/lot49-base-java --image-name ghcr.io/lot49-cybernetics/lot49-base-java:noble --push
             - name: Pre-build and publish lot49-base-polyglot
               run: devcontainer build --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble --push
             

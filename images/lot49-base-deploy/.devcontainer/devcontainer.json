@@ -2,8 +2,10 @@
     "name": "lot49-base-deploy",
     "image": "ghcr.io/lot49-cybernetics/lot49-base:noble",
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker": {},
-        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+            "minikubeVersion": "none"
+        },
         "ghcr.io/rio/features/k9s:1": {},
         "ghcr.io/robbert229/devcontainer-features/opentofu:1": {
             "version": "1.9.1"
