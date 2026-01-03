@@ -6,7 +6,7 @@
     },
     "features": {
         "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.16": {
-            "version": "25"
+            "version": "29"
         },
         "ghcr.io/devcontainers/features/go:1": {},
         "ghcr.io/devcontainers-community/npm-features/typescript:1": {
@@ -14,7 +14,7 @@
         },
         "ghcr.io/devcontainers-extra/features/apt-packages": {
             "packages": [
-                "libclang-rt-dev-wasm64",
+                "libclang-rt-dev-wasm64"
             ]
         },
         "ghcr.io/devcontainers-extra/features/mypy:2": {},
@@ -22,6 +22,7 @@
         "ghcr.io/devcontainers-extra/features/ruff:1": {},
         "ghcr.io/devcontainers-extra/features/zig:1": {},
         "ghcr.io/hspaans/devcontainer-features/pytest:1": {},
+        "ghcr.io/mrsimonemms/devcontainers/buf:1": {},
         "ghcr.io/prulloac/devcontainer-features/latex:1": {},
         "ghcr.io/va-h/devcontainers-features/uv:1": {},
         "./golang-wasi/": {
