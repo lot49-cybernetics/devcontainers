@@ -25,7 +25,7 @@
         "ghcr.io/prulloac/devcontainer-features/latex:1": {},
         "ghcr.io/va-h/devcontainers-features/uv:1": {},
         "./golang-wasi/": {
-            "version": "0.35.0"
+            "version": "0.40.1"
         }
     }
 }
