@@ -7,9 +7,9 @@
         "version": {
             "type": "string",
             "proposals": [
-                "8.2.1"
+                "8.5.1"
             ],
-            "default": "8.2.1",
+            "default": "8.5.1",
             "description": "Set the version of buildifier to download and install."
         }
     },

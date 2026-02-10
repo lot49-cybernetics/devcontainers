@@ -11,7 +11,7 @@ set -e
 ARCH=$(uname -m)
 
 # Sets the exact version to install, with a default and override
-TINY_GO_VERSION="${VERSION:-"0.35.0"}"
+TINY_GO_VERSION="${VERSION:-"0.40.1"}"
 
 # Set the URL of the binary to download based on the architecture
 if [[ $ARCH == "x86_64" ]]; then

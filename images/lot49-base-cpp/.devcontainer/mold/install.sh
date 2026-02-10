@@ -6,7 +6,7 @@ set -e
 ARCH=$(uname -m)
 
 # Sets the exact version to install, with a default and override
-VERSION=${VERSION:-"2.33.0"}
+VERSION=${VERSION:-"2.40.4"}
 
 # Set the URL of the binary to download based on the architecture
 if [[ $ARCH == "x86_64" ]]; then

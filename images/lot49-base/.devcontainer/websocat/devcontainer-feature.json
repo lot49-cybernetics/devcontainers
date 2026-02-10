@@ -8,9 +8,9 @@
             "type": "string",
             "proposals": [
                 "latest",
-                "v1.13.0"
+                "v1.14.1"
             ],
-            "default": "v1.13.0",
+            "default": "v1.14.1",
             "description": "Set the version of websocat to download and install."
         }
     },
