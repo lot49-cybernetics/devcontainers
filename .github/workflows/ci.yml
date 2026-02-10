@@ -39,14 +39,14 @@ jobs:
                 password: ${{ secrets.GITHUB_TOKEN }}
             - name: Pre-build and publish lot49-base
               run: devcontainer build --workspace-folder images/lot49-base --image-name ghcr.io/lot49-cybernetics/lot49-base:noble-${{ matrix.arch }} --push
-            - name: Pre-build and publish lot49-base-deploy
-              run: devcontainer build --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble-${{ matrix.arch }} --push
-            - name: Pre-build and publish lot49-base-cpp
-              run: devcontainer build --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble-${{ matrix.arch }} --push
-            - name: Pre-build and publish lot49-base-java
-              run: devcontainer build --workspace-folder images/lot49-base-java --image-name ghcr.io/lot49-cybernetics/lot49-base-java:noble-${{ matrix.arch }} --push
-            - name: Pre-build and publish lot49-base-polyglot
-              run: devcontainer build --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble-${{ matrix.arch }} --push
+            # - name: Pre-build and publish lot49-base-deploy
+            #   run: devcontainer build --workspace-folder images/lot49-base-deploy --image-name ghcr.io/lot49-cybernetics/lot49-base-deploy:noble-${{ matrix.arch }} --push
+            # - name: Pre-build and publish lot49-base-cpp
+            #   run: devcontainer build --workspace-folder images/lot49-base-cpp --image-name ghcr.io/lot49-cybernetics/lot49-base-cpp:noble-${{ matrix.arch }} --push
+            # - name: Pre-build and publish lot49-base-java
+            #   run: devcontainer build --workspace-folder images/lot49-base-java --image-name ghcr.io/lot49-cybernetics/lot49-base-java:noble-${{ matrix.arch }} --push
+            # - name: Pre-build and publish lot49-base-polyglot
+            #   run: devcontainer build --workspace-folder images/lot49-base-polyglot --image-name ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble-${{ matrix.arch }} --push
 
     merge-manifests:
         needs: pre-build-all
@@ -66,27 +66,27 @@ jobs:
                 ghcr.io/lot49-cybernetics/lot49-base:noble-amd64 \
                 ghcr.io/lot49-cybernetics/lot49-base:noble-arm64
             
-            - name: Create manifest for lot49-base-deploy
-              run: |
-                docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-deploy:noble \
-                ghcr.io/lot49-cybernetics/lot49-base-deploy:noble-amd64 \
-                ghcr.io/lot49-cybernetics/lot49-base-deploy:noble-arm64
+            # - name: Create manifest for lot49-base-deploy
+            #   run: |
+            #     docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-deploy:noble \
+            #     ghcr.io/lot49-cybernetics/lot49-base-deploy:noble-amd64 \
+            #     ghcr.io/lot49-cybernetics/lot49-base-deploy:noble-arm64
 
-            - name: Create manifest for lot49-base-cpp
-              run: |
-                docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-cpp:noble \
-                ghcr.io/lot49-cybernetics/lot49-base-cpp:noble-amd64 \
-                ghcr.io/lot49-cybernetics/lot49-base-cpp:noble-arm64
+            # - name: Create manifest for lot49-base-cpp
+            #   run: |
+            #     docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-cpp:noble \
+            #     ghcr.io/lot49-cybernetics/lot49-base-cpp:noble-amd64 \
+            #     ghcr.io/lot49-cybernetics/lot49-base-cpp:noble-arm64
 
-            - name: Create manifest for lot49-base-java
-              run: |
-                docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-java:noble \
-                ghcr.io/lot49-cybernetics/lot49-base-java:noble-amd64 \
-                ghcr.io/lot49-cybernetics/lot49-base-java:noble-arm64
+            # - name: Create manifest for lot49-base-java
+            #   run: |
+            #     docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-java:noble \
+            #     ghcr.io/lot49-cybernetics/lot49-base-java:noble-amd64 \
+            #     ghcr.io/lot49-cybernetics/lot49-base-java:noble-arm64
 
-            - name: Create manifest for lot49-base-polyglot
-              run: |
-                docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble \
-                ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble-amd64 \
-                ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble-arm64
+            # - name: Create manifest for lot49-base-polyglot
+            #   run: |
+            #     docker buildx imagetools create -t ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble \
+            #     ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble-amd64 \
+            #     ghcr.io/lot49-cybernetics/lot49-base-polyglot:noble-arm64
             
