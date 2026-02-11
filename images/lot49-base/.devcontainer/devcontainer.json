@@ -19,7 +19,7 @@
         "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
         "ghcr.io/devcontainers-extra/features/syft:1": {},
         "./buildifier": {
-            "version": "8.2.1"
+            "version": "8.5.1"
         },
         "./websocat": {
             "version": "v1.14.1"

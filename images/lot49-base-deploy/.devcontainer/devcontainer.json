@@ -6,7 +6,7 @@
         "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
         "ghcr.io/rio/features/k9s:1": {},
         "ghcr.io/robbert229/devcontainer-features/opentofu:1": {
-            "version": "1.11.2"
+            "version": "1.11.4"
         },
         "ghcr.io/devcontainers-extra/features/terragrunt:1": {}
     }

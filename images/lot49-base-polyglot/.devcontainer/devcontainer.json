@@ -5,8 +5,8 @@
       "dockerfile": "./Dockerfile"
     },
     "features": {
-        "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.16": {
-            "version": "29"
+        "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0": {
+            "version": "30"
         },
         "ghcr.io/devcontainers/features/go:1": {},
         "ghcr.io/devcontainers-community/npm-features/typescript:1": {
