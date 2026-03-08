@@ -1,0 +1,9 @@
+{
+    "id": "cuda-compat",
+    "name": "CUDA Compatibility",
+    "version": "1.0.0",
+    "description": "Installs dependencies required for CUDA Toolkit 11.8 on newer Ubuntu versions (e.g. libtinfo5 on Noble)",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

@@ -5,10 +5,15 @@
       "dockerfile": "./Dockerfile"
     },
     "features": {
+        "./cuda-compat": {},
         "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0": {
             "version": "30"
         },
         "ghcr.io/devcontainers/features/go:1": {},
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+            "installNvtx": true,
+            "installToolkit": true
+        },
         "ghcr.io/devcontainers-community/npm-features/typescript:1": {
             "version": "latest"
         },
