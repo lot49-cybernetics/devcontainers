@@ -1,0 +1,10 @@
+{
+    "id": "nvidia-cuda",
+    "version": "1.0.0",
+    "name": "NVIDIA CUDA (Custom)",
+    "description": "Installs NVIDIA CUDA Toolkit for Ubuntu 24.04",
+    "options": {},
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
