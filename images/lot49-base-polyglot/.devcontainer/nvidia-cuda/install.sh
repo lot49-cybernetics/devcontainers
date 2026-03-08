@@ -22,9 +22,9 @@ fi
 wget "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/${CUDA_ARCH}/cuda-keyring_1.1-1_all.deb"
 dpkg -i cuda-keyring_1.1-1_all.deb
 
-# Update package lists and install CUDA 13
+# Update package lists and install CUDA 13.1
 apt-get update
-apt-get -y install cuda-13
+apt-get -y install cuda-drivers cuda-toolkit-13-1
 
 # Clean up
 rm cuda-keyring_1.1-1_all.deb
