@@ -7,10 +7,10 @@
         "ghcr.io/devcontainers-extra/features/ansible:2": {},
         "ghcr.io/devcontainers-extra/features/apt-packages": {
             "packages": [
-                "sops",
                 "yq"
             ]
         },
+        "ghcr.io/devcontainers-extra/features/sops:1": {},
         "ghcr.io/devcontainers-extra/features/terragrunt:1": {},
         "ghcr.io/flexwie/devcontainer-features/op:1": {},
         "ghcr.io/rio/features/k9s:1": {},
