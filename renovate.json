@@ -1,0 +1,102 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "description": [
+    "No automerge: every update opens a PR for review, since downstream Lot49 projects depend on these published base images. CI (devcontainer build) validates each PR.",
+    "Built-in managers cover GitHub Actions in the CI workflow and published devcontainer Features referenced by registry. The customManagers below cover this repo's bespoke pins: GitHub-release binaries installed by the local Features, whose versions are duplicated across install.sh, devcontainer-feature.json, and the consuming devcontainer.json."
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "buildifier (bazelbuild/buildtools) pinned in the lot49-base buildifier Feature",
+      "managerFilePatterns": [
+        "images/lot49-base/.devcontainer/buildifier/install.sh",
+        "images/lot49-base/.devcontainer/buildifier/devcontainer-feature.json",
+        "images/lot49-base/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "VERSION=\\$\\{VERSION:-\"(?<currentValue>[^\"]+)\"\\}",
+        "\"default\":\\s*\"(?<currentValue>[^\"]+)\"",
+        "\"\\./buildifier\":\\s*\\{\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "bazelbuild/buildtools",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^v(?<version>.+)$"
+    },
+    {
+      "customType": "regex",
+      "description": "websocat (vi/websocat) pinned in the lot49-base websocat Feature",
+      "managerFilePatterns": [
+        "images/lot49-base/.devcontainer/websocat/install.sh",
+        "images/lot49-base/.devcontainer/websocat/devcontainer-feature.json",
+        "images/lot49-base/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "VERSION=\\$\\{VERSION:-\"(?<currentValue>[^\"]+)\"\\}",
+        "\"default\":\\s*\"(?<currentValue>v[^\"]+)\"",
+        "\"\\./websocat\":\\s*\\{\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "vi/websocat",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "description": "mold (rui314/mold) pinned in the lot49-base-cpp mold Feature",
+      "managerFilePatterns": [
+        "images/lot49-base-cpp/.devcontainer/mold/install.sh",
+        "images/lot49-base-cpp/.devcontainer/mold/devcontainer-feature.json",
+        "images/lot49-base-cpp/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "VERSION=\\$\\{VERSION:-\"(?<currentValue>[^\"]+)\"\\}",
+        "\"proposals\":\\s*\\[[^\\]]*?\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\"",
+        "\"\\./mold\":\\s*\\{\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "rui314/mold",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^v(?<version>.+)$"
+    },
+    {
+      "customType": "regex",
+      "description": "TinyGo (tinygo-org/tinygo) pinned in the lot49-base-polyglot golang-wasi Feature",
+      "managerFilePatterns": [
+        "images/lot49-base-polyglot/.devcontainer/golang-wasi/install.sh",
+        "images/lot49-base-polyglot/.devcontainer/golang-wasi/devcontainer-feature.json",
+        "images/lot49-base-polyglot/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "VERSION:-\"(?<currentValue>[^\"]+)\"",
+        "\"default\":\\s*\"(?<currentValue>[^\"]+)\"",
+        "\"\\./golang-wasi/\":\\s*\\{\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "tinygo-org/tinygo",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^v(?<version>.+)$"
+    },
+    {
+      "customType": "regex",
+      "description": "OpenTofu version option in the lot49-base-deploy Feature set",
+      "managerFilePatterns": [
+        "images/lot49-base-deploy/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "opentofu/opentofu",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^v(?<version>.+)$"
+    }
+  ]
+}
