@@ -22,13 +22,13 @@ fi
 wget "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/${CUDA_ARCH}/cuda-keyring_1.1-1_all.deb"
 dpkg -i cuda-keyring_1.1-1_all.deb
 
-# Update package lists and install CUDA 13.1
+# Update package lists and install CUDA 13.3
 apt-get update
 
 # We only install the toolkit here. In a containerized environment, the drivers 
 # are typically provided by the host via the NVIDIA Container Toolkit.
 # Installing cuda-drivers explicitly pulls the latest (beta) drivers which we want to avoid.
-apt-get -y install cuda-toolkit-13-1
+apt-get -y install cuda-toolkit-13-3
 
 # Clean up
 rm cuda-keyring_1.1-1_all.deb

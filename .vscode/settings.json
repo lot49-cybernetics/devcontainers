@@ -7,7 +7,7 @@
     ],
     "extensions.ignoreRecommendations": true,
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Dark Modern",
     "workbench.colorCustomizations": {
         "activityBar.background": "#023525",
         "titleBar.activeBackground": "#034A33",

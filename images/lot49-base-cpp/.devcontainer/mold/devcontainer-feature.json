@@ -8,7 +8,7 @@
             "type": "string",
             "proposals": [
                 "latest",
-                "2.40.4"
+                "2.41.0"
             ],
             "default": "latest",
             "description": "Set the version of mold to download and install."

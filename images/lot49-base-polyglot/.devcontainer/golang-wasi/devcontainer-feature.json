@@ -8,10 +8,10 @@
         "version": {
             "type": "string",
             "proposals": [
-                "0.40.1",
-                "0.33.0"
+                "0.41.1",
+                "0.40.1"
             ],
-            "default": "0.40.1",
+            "default": "0.41.1",
             "description": "Select or enter a TinyGo Version to install"
         }
     },
