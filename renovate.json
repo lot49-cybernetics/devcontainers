@@ -97,6 +97,34 @@
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^v(?<version>.+)$"
+    },
+    {
+      "customType": "regex",
+      "description": "WASI SDK version (dev-wasm wasmtime-wasi Feature 'version' option) in lot49-base-polyglot. The option selects the WASI SDK release (github.com/WebAssembly/wasi-sdk, tagged wasi-sdk-<N>), tracked here as a bare major so it only ever moves to a release that exists.",
+      "managerFilePatterns": [
+        "images/lot49-base-polyglot/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "wasmtime-wasi:0\":\\s*\\{\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "WebAssembly/wasi-sdk",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "docker",
+      "extractVersionTemplate": "^wasi-sdk-(?<version>\\d+)$"
+    },
+    {
+      "customType": "regex",
+      "description": "JDK major (devcontainers java Feature 'version' option) in lot49-base-java. Tracks Adoptium Temurin majors so it bumps on new feature releases (26 -> 27 -> ...).",
+      "managerFilePatterns": [
+        "images/lot49-base-java/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "features/java:1\":\\s*\\{\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "java",
+      "datasourceTemplate": "java-version",
+      "versioningTemplate": "docker",
+      "extractVersionTemplate": "^(?<version>\\d+)"
     }
   ]
 }
