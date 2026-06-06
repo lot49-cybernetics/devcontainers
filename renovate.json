@@ -125,6 +125,20 @@
       "datasourceTemplate": "java-version",
       "versioningTemplate": "docker",
       "extractVersionTemplate": "^(?<version>\\d+)"
+    },
+    {
+      "customType": "regex",
+      "description": "buf (bufbuild/buf) version option for the mrsimonemms buf Feature in lot49-base-polyglot. Pinned (rather than left on the Feature's fragile 'latest' GitHub-API resolution) and kept current here.",
+      "managerFilePatterns": [
+        "images/lot49-base-polyglot/.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "buf:1\":\\s*\\{\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "bufbuild/buf",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^v(?<version>.+)$"
     }
   ]
 }
