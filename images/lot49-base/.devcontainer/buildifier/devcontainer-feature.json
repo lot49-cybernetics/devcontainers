@@ -9,7 +9,7 @@
             "proposals": [
                 "8.5.1"
             ],
-            "default": "8.5.1",
+            "default": "10.1.0",
             "description": "Set the version of buildifier to download and install."
         }
     },

@@ -24,7 +24,7 @@
             "version": "latest"
         },
         "./buildifier": {
-            "version": "8.5.1"
+            "version": "10.1.0"
         },
         "./websocat": {
             "version": "v1.14.1"
